@@ -1,0 +1,9 @@
+diff a/resources/Algorithm.py b/resources/Algorithm.py	(rejected hunks)
+@@ -13,6 +13,7 @@
+ 
+     def post(self):
+         data = request.get_json(force=True)
++        bestParts = str(self.partsPicker.getBestParts(data["budget"], data["priorities"]))
+         toReturn = json.dumps(bestParts)
+         return {'status': 'success', 'received data': toReturn}, 200
+ 
