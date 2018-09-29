@@ -7,28 +7,32 @@ import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
-socketio = SocketIO(app)
+# socketio = SocketIO(app)
 
-@socketio.on('action')
-def handleAction(action):
-    print("Got an action:", action['type'])
-    payload = action['payload']
-    budget = payload['budget']
-    priorities = payload['priorities']
+# @socketio.on('action')
+# def handleAction(action):
+#     print("Got an action:", action['type'])
+#     payload = action['payload']
+#     budget = payload['budget']
+#     priorities = payload['priorities']
 
-    database = DatabaseFacade()
-    partsPicker = FacadeAlg(database)
-    bestSpec = partsPicker.getBestParts(budget, priorities)
-    responseData = simplejson.dumps(bestSpec)
-    emit('action', {'type': 'response_get_auto',  'payload': responseData})
+#     database = DatabaseFacade()
+#     partsPicker = FacadeAlg(database)
+#     bestSpec = partsPicker.getBestParts(budget, priorities)
+#     responseData = simplejson.dumps(bestSpec)
+#     emit('action', {'type': 'response_get_auto',  'payload': responseData})
 
-@socketio.on('connect')
-def test_connect():
-    print('A client connected')
+# @socketio.on('connect')
+# def test_connect():
+#     print('A client connected')
 
-@socketio.on('disconnect')
-def test_disconnect():
-    print('A client disconnect')
+# @socketio.on('disconnect')
+# def test_disconnect():
+#     print('A client disconnect')
+
+@app.route('/')
+def index():
+  return 'SpecterV3-Server'
 
 def create_app(config_filename):
     app.config.from_object(config_filename)
