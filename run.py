@@ -32,7 +32,7 @@ app.config['SECRET_KEY'] = 'secret!'
 
 @app.route('/')
 def index():
-  return 'SpecterV3-Server'
+  return 'SpecterV3-Server test'
 
 def create_app(config_filename):
     app.config.from_object(config_filename)
