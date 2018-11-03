@@ -2,7 +2,6 @@ import psycopg2
 
 from config import SQLALCHEMY_DATABASE_URI
 
-
 class DatabaseManager:
     def __init__(self):
         self.conn = psycopg2.connect(SQLALCHEMY_DATABASE_URI)

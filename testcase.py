@@ -1,5 +1,4 @@
 from resources.algorithm.HeapFactory1 import HeapFactory1
-from resources.database.DatabaseFacade import DatabaseFacade
 from resources.algorithm.NodeFactory1 import NodeFactory1
 from resources.algorithm.SpecFactory1 import SpecFactory1
 
@@ -8,6 +7,9 @@ from resources.algorithm.FacadeAlg import FacadeAlg
 
 from resources.algorithm.Spec1 import Spec1
 from resources.algorithm.Node1 import Node1
+
+from resources.database.DatabaseFacade import DatabaseFacade
+
 
 import decimal
 import unittest
