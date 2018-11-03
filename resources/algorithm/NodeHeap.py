@@ -43,27 +43,14 @@ class NodeHeap(ABC):
 
     def getBestSpecs(self):
         bestSpecs = []
-        dic = {}
-        spec = self.specs[max(self.specs)]
-        for component in spec.getComponents():
-            dic[component.getType()] = component.getAttributes()
-        bestSpecs.append(dic)
-        del dic
-        del self.specs[max(self.specs)]
-        dic = {}
-        spec = self.specs[max(self.specs)]
-        for component in spec.getComponents():
-            dic[component.getType()] = component.getAttributes()
-        bestSpecs.append(dic)
-        del dic
-        del self.specs[max(self.specs)]
-        dic = {}
-        spec = self.specs[max(self.specs)]
-        for component in spec.getComponents():
-            dic[component.getType()] = component.getAttributes()
-        bestSpecs.append(dic)
-        del dic
-        del self.specs[max(self.specs)]
+        while(len(bestSpecs)<3 and len(self.specs)>0):
+            dic = {}
+            spec = self.specs[max(self.specs)]
+            for component in spec.getComponents():
+                dic[component.getType()] = component.getAttributes()
+            bestSpecs.append(spec)
+            del dic
+            del self.specs[max(self.specs)]
         return bestSpecs
 
     def getAllSpecs(self):

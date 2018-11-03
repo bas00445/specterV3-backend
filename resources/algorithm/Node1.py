@@ -8,6 +8,7 @@ class Node1(Node):
         self.maxValues = maxValues
         self.attributeMultipliers = attributeMultipliers
         self.score = self.computeScore()
+        attributes["Score"] = self.score
 
     def computeScore(self):
         score = 0

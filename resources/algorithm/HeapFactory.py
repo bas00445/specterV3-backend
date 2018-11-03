@@ -11,3 +11,4 @@ class HeapFactory(ABC):
     @abstractmethod
     def createHeap(self, budget, priorities, selectedComponents):
         pass
+

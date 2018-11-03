@@ -9,14 +9,6 @@ class Spec(ABC):
         pass
 
     @abstractmethod
-    def computePrice(self):
-        pass
-
-    @abstractmethod
-    def computePerformanceScore(self):
-        pass
-
-    @abstractmethod
     def getPrice(self):
         pass
 

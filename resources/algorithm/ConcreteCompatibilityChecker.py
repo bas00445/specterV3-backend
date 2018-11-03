@@ -20,6 +20,8 @@ class ConcreteCompatibilityChecker(CompatibilityChecker):
             return ['H110', 'H170', 'Q150', 'Q170', 'B150', 'Z170']
         elif(generation=='7'):
             return ['H270', 'Q250', 'Q270', 'B250', 'Z270']
+        elif(generation=='6+7'):
+            return ['H110', 'H170', 'Q150', 'Q170', 'B150', 'Z170', 'H270', 'Q250', 'Q270', 'B250', 'Z270']
         elif(generation=='8'):
             return ['Z370']
         elif(generation=='x1'):
@@ -34,11 +36,9 @@ class ConcreteCompatibilityChecker(CompatibilityChecker):
         if(title[0]=="INTEL"):
             gen = title[3]
             if(gen[0]=="G"):
-                generation = gen[1]
+                generation = '6+7'
             else:
                 generation = gen[3]
-        elif(title[0]=="test_CPU"):
-            generation = 3
         elif(title[1]=="AM4"):
             generation = "x1"
         elif(title[1]=="TR4"):
@@ -54,7 +54,6 @@ class ConcreteCompatibilityChecker(CompatibilityChecker):
             if "Mainboard" in component.getType():
                 mainboardPresent = True
                 socket = component.getAttributes()["Socket"]
-                CPU_series = component.getAttributes()["CPU_Series"]
                 chipset = component.getAttributes()["Chipset"]
                 ram_type = component.getAttributes()["RAM_Type"]
                 break
@@ -95,4 +94,3 @@ class ConcreteCompatibilityChecker(CompatibilityChecker):
             return False
         else:
             return True
-

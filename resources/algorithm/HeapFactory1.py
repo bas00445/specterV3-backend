@@ -1,4 +1,5 @@
 from .HeapFactory import HeapFactory
+from .NodeFactory import NodeFactory
 from .NodeHeapCompatibles import NodeHeapCompatibles
 from .NodeHeapIncompatibles import NodeHeapIncompatibles
 import time
