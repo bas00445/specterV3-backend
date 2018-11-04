@@ -20,3 +20,4 @@ class NodeFactory1(NodeFactory):
 
     def createNode(self, componentType, attributes):
         return Node1(componentType, attributes, {}, 1, {})
+

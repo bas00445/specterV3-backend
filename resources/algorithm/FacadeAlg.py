@@ -14,7 +14,6 @@ class FacadeAlg:
         nodeHeap = self.heapFactory.createHeap(budget, priorities, selectedComponents)
         bestSpec = nodeHeap.getBestSpecs()
         return bestSpec
-
         
 # database = DatabaseFacade()
 # facade = FacadeAlg(HeapFactory1(NodeFactory1(database), SpecFactory1(), ConcreteCompatibilityChecker()))
