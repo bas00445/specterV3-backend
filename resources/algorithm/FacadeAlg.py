@@ -14,4 +14,9 @@ class FacadeAlg:
         nodeHeap = self.heapFactory.createHeap(budget, priorities, selectedComponents)
         bestSpec = nodeHeap.getBestSpecs()
         return bestSpec
+
+    def getJsonBestParts(self, budget, priorities, selectedComponents):
+        nodeHeap = self.heapFactory.createHeap(budget, priorities, selectedComponents)
+        bestSpec = nodeHeap.getJsonBestSpecs()
+        return bestSpec
         

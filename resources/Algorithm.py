@@ -19,7 +19,7 @@ class AlgorithmResource(Resource):
         data = request.get_json(force=True)
         for component in data["selectedComponents"]:
             data["selectedComponents"][component]["Price"] = decimal.Decimal(data["selectedComponents"][component]["Price"])
-        bestParts = self.partsPicker.getBestParts(data["budget"], data["priorities"], data["selectedComponents"])
+        bestParts = self.partsPicker.getJsonBestParts(data["budget"], data["priorities"], data["selectedComponents"])
         toReturn = simplejson.dumps(bestParts)
         return {'bestSpecs': toReturn}, 200
 

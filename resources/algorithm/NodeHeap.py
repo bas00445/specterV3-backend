@@ -53,6 +53,31 @@ class NodeHeap(ABC):
             del self.specs[max(self.specs)]
         return bestSpecs
 
+    def getJsonBestSpecs(self):
+        bestSpecs = []
+        dic = {}
+        spec = self.specs[max(self.specs)]
+        for component in spec.getComponents():
+            dic[component.getType()] = component.getAttributes()
+        bestSpecs.append(dic)
+        del dic
+        del self.specs[max(self.specs)]
+        dic = {}
+        spec = self.specs[max(self.specs)]
+        for component in spec.getComponents():
+            dic[component.getType()] = component.getAttributes()
+        bestSpecs.append(dic)
+        del dic
+        del self.specs[max(self.specs)]
+        dic = {}
+        spec = self.specs[max(self.specs)]
+        for component in spec.getComponents():
+            dic[component.getType()] = component.getAttributes()
+        bestSpecs.append(dic)
+        del dic
+        del self.specs[max(self.specs)]
+        return bestSpecs
+
     def getAllSpecs(self):
         return self.specs
 
