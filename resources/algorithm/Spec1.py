@@ -31,9 +31,3 @@ class Spec1(Spec):
 
     def getComponents(self):
         return self.components
-
-    def getDict(self):
-        dic = {}
-        for component in self.getComponents():
-            dic[component.getType()] = component.getAttributes()
-        return dic.__str__()

@@ -15,9 +15,3 @@ class FacadeAlg:
         bestSpec = nodeHeap.getBestSpecs()
         return bestSpec
         
-# database = DatabaseFacade()
-# facade = FacadeAlg(HeapFactory1(NodeFactory1(database), SpecFactory1(), ConcreteCompatibilityChecker()))
-# parts = facade.getBestParts(15000,
-#                             {"CPU": [1, {}], "Mainboard": [1, {}]},
-#                             {})
-# print(parts[0].getDict())
